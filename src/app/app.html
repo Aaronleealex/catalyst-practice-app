@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catalyst Career Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --blue: #1f4da6;
+      --yellow: #ffd931;
+      --radius: 12px;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,sanitize,Segoe UI,Roboto,sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .site-header {
+      background: var(--blue);
+      color: white;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 64px;
+      height: auto;
+      display: block;
+    }
+
+    .title {
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    .nav {
+      margin-left: auto;
+      display: flex;
+      gap: 24px;
+      font-weight: 600;
+    }
+
+    .nav-item {
+      position: relative;
+      padding: 4px 0;
+      font-size: 1rem;
+    }
+
+    .nav-item:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      max-width: 1100px;
+      margin: 60px auto 120px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      margin: 0 0 24px;
+      color: var(--blue);
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform .15s;
+    }
+
+    .btn-primary:hover {
+      filter:brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .description {
+      margin: 40px auto 80px;
+      max-width: 800px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .subdomains-title {
+      font-size: 2.5rem;
+      color: var(--blue);
+      font-weight: 700;
+      margin: 80px 0 40px;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 32px;
+      padding: 0 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      padding: 24px 20px 40px;
+      border-radius: 8px;
+      color: white;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 28px -4px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .features {
+      list-style: disc;
+      padding-left: 18px;
+      margin: 0 0 24px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .card .btn {
+      align-self: center;
+      background: var(--yellow);
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      min-width: 140px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: transform .15s;
+    }
+
+    .card .btn:hover {
+      filter:brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    /* Specific gradients */
+    .thinking { background: linear-gradient(160deg,#ff7f1f 0%,#5d260f 100%); }
+    .relating { background: linear-gradient(160deg,#f58ea5 0%,#86364c 100%); }
+    .executing { background: linear-gradient(160deg,#9b5ed7 0%,#1f0e25 100%); }
+    .influencing { background: linear-gradient(160deg,#00b04f 0%,#004a19 100%); }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .title { font-size: 1.6rem; }
+      .main h1 { font-size: 2.2rem; }
+      .subdomains-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo">
+      <!-- Placeholder logo; replace src with real logo -->
+      <img src="/images/Catalystlogo.png" alt="Catalyst logo" />
+      <div class="title">
+        <div>Catalyst Career</div>
+        <div>Explorer</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-item"><a href="#">Home</a></div>
+      <div class="nav-item"><a href="#">Strength Test</a></div>
+      <div class="nav-item"><a href="#">Resources</a></div>
+      <div class="nav-item"><a href="#">About Us</a></div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1>Take the strength test</h1>
+    <button class="btn-primary">START</button>
+    <p class="description">
+      Paragraph about the purpose and how the strength test works. This can explain what the test measures,
+      how long it takes, and what users will get out of it.
+    </p>
+
+    <div class="subdomains-title">Optional in-depth subdomain tests</div>
+
+    <div class="cards">
+      <div class="card thinking">
+        <div>
+          <h2>Thinking</h2>
+          <ul class="features">
+            <li>Strategic</li>
+            <li>Curious</li>
+            <li>Analytical</li>
+            <li>Creative</li>
+            <li>Synthesizer</li>
+          </ul>
+        </div>
+        <button class="btn">START</button>
+      </div>
+
+      <div class="card relating">
+        <div>
+          <h2>Relating</h2>
+          <ul class="features">
+            <li>Strategic</li>
+            <li>Curious</li>
+            <li>Analytical</li>
+            <li>Creative</li>
+            <li>Synthesizer</li>
+          </ul>
+        </div>
+        <button class="btn">START</button>
+      </div>
+
+      <div class="card executing">
+        <div>
+          <h2>Executing</h2>
+          <ul class="features">
+            <li>Strategic</li>
+            <li>Curious</li>
+            <li>Analytical</li>
+            <li>Creative</li>
+            <li>Synthesizer</li>
+          </ul>
+        </div>
+        <button class="btn">START</button>
+      </div>
+
+      <div class="card influencing">
+        <div>
+          <h2>Influencing</h2>
+          <ul class="features">
+            <li>Strategic</li>
+            <li>Curious</li>
+            <li>Analytical</li>
+            <li>Creative</li>
+            <li>Synthesizer</li>
+          </ul>
+        </div>
+        <button class="btn">START</button>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
